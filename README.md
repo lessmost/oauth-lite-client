@@ -16,6 +16,8 @@ Already tested service providers list:
 1. new the client with options, for all accepted options please refer to the comment
 
     ```js
+    var OAuth = require('oauth-lite-client');
+    
     var client1 = new OAuth.OAuth1({
         consumer_key: 'yourappkey',
         consumer_secret: 'yourappsecret',
