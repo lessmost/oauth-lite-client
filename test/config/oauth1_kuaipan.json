@@ -1,0 +1,9 @@
+{
+    "consumer_key": "xcIgVGI6jHPqVwPY",
+    "consumer_secret": "***",
+    "request_token_url": "https://openapi.kuaipan.cn/open/requestToken",
+    "access_token_url": "https://openapi.kuaipan.cn/open/accessToken",
+    "authorize_url": "https://www.kuaipan.cn/api.php?ac=open&op=authorise",
+    "account_info_url": "http://openapi.kuaipan.cn/1/account_info",
+    "transport_method": "query"
+}

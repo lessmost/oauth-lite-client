@@ -1,0 +1,12 @@
+{
+    "consumer_key": "b7piwkknw58vsol",
+    "consumer_secret": "***",
+    "request_token_url": "https://api.dropbox.com/1/oauth/request_token",
+    "access_token_url": "https://api.dropbox.com/1/oauth/access_token",
+    "authorize_url": "https://www.dropbox.com/1/oauth/authorize",
+    "account_info_url": "https://api.dropbox.com/1/account/info",
+    "request": [{
+        "url": "https://api.dropbox.com/1/metadata/auto/",
+        "method": "GET"
+    }]
+}

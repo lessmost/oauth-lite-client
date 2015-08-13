@@ -1,0 +1,11 @@
+{
+    "client_id": "b7piwkknw58vsol",
+    "client_secret": "***",
+    "token_url": "https://api.dropbox.com/1/oauth2/token",
+    "authorize_url": "https://www.dropbox.com/1/oauth2/authorize",
+    "account_info_url": "https://api.dropbox.com/1/account/info",
+    "request": [{
+        "url": "https://api.dropbox.com/1/metadata/auto/",
+        "method": "GET"
+    }]
+}
