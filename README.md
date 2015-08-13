@@ -15,76 +15,76 @@ Already tested service providers list:
 
 1. new the client with options, for all accepted options please refer to the comment
 
-        ```js
-        var client1 = new OAuth.OAuth1({
-            consumer_key: 'yourappkey',
-            consumer_secret: 'yourappsecret',
-            callback: 'redirecturl',
-            request_token_url: "https://api.dropbox.com/1/oauth/request_token",
-            access_token_url: "https://api.dropbox.com/1/oauth/access_token",
-            authorize_url: "https://www.dropbox.com/1/oauth/authorize",
-            account_info_url: "https://api.dropbox.com/1/account/info",
-            transport_method: 'header or query or body'
-        });
-        var client2 = new OAuth.OAuth2({
-            client_id: 'yourclientid',
-            client_secret: 'yourclientsecre',
-            callback: 'redirecturl',
-            token_url: "https://api.dropbox.com/1/oauth2/token",
-            authorize_url: "https://www.dropbox.com/1/oauth2/authorize",
-            account_info_url: "https://api.dropbox.com/1/account/info",
-        });
-        ```
+    ```js
+    var client1 = new OAuth.OAuth1({
+        consumer_key: 'yourappkey',
+        consumer_secret: 'yourappsecret',
+        callback: 'redirecturl',
+        request_token_url: "https://api.dropbox.com/1/oauth/request_token",
+        access_token_url: "https://api.dropbox.com/1/oauth/access_token",
+        authorize_url: "https://www.dropbox.com/1/oauth/authorize",
+        account_info_url: "https://api.dropbox.com/1/account/info",
+        transport_method: 'header or query or body'
+    });
+    var client2 = new OAuth.OAuth2({
+        client_id: 'yourclientid',
+        client_secret: 'yourclientsecre',
+        callback: 'redirecturl',
+        token_url: "https://api.dropbox.com/1/oauth2/token",
+        authorize_url: "https://www.dropbox.com/1/oauth2/authorize",
+        account_info_url: "https://api.dropbox.com/1/account/info",
+    });
+    ```
 
 2. get the authorize url for redirect
 
-        ```js
-        client.getAuthorizeUrl(function(err, url) {
-            // redirect to the returned url
-            // after user grant acess authorize, get the following parameter from query string
-            // for OAuth1: oauth_token, oauth_verfiier
-            // for OAuth2: code
-        });
-        ```
+    ```js
+    client.getAuthorizeUrl(function(err, url) {
+        // redirect to the returned url
+        // after user grant acess authorize, get the following parameter from query string
+        // for OAuth1: oauth_token, oauth_verfiier
+        // for OAuth2: code
+    });
+    ```
 
 3. get the token
 
-        ```js
-        // after get the oauth_token or code from step 2, we can call token function
-        client.token(function (err, res, body) {
-            // for OAuth 1, body contains oauth_token and oauth_token_secret
-            var token = body.oauth_token;
-            var tokenSecret = body.oauth_token_secret;
-            
-            // for OAuth 2, body contains access_token and optional refresh_token
-            var accessToken = body.access_token;
-            var refreshToken = body.refresh_token;
-        });  
-        ```
+    ```js
+    // after get the oauth_token or code from step 2, we can call token function
+    client.token(function (err, res, body) {
+        // for OAuth 1, body contains oauth_token and oauth_token_secret
+        var token = body.oauth_token;
+        var tokenSecret = body.oauth_token_secret;
+        
+        // for OAuth 2, body contains access_token and optional refresh_token
+        var accessToken = body.access_token;
+        var refreshToken = body.refresh_token;
+    });  
+    ```
 
 4. get the user profile
 
-        ```js
-        // after get the token, we can call accountInfo to get user profile
-        client.accountInfo(function (err, res, body) {
-            // The response body vary for different source providers
-            // we may get user name or email from the body
-            var res = JSON.parse(body);
-        });
-        ```
+    ```js
+    // after get the token, we can call accountInfo to get user profile
+    client.accountInfo(function (err, res, body) {
+        // The response body vary for different source providers
+        // we may get user name or email from the body
+        var res = JSON.parse(body);
+    });
+    ```
 
 5. call service provider's API
 
-        ```js
-        // after get the token, we can call request function to get any source
-        // provider's API endpoint
-        client.request({
-           // get user's Dropbox files metadata information
-           url: 'https://api.dropbox.com/1/metadata/auto/'
-        }, function (err, res, body) {
-           // parse body..
-        });
-        ```
+    ```js
+    // after get the token, we can call request function to get any source
+    // provider's API endpoint
+    client.request({
+       // get user's Dropbox files metadata information
+       url: 'https://api.dropbox.com/1/metadata/auto/'
+    }, function (err, res, body) {
+       // parse body..
+    });
+    ```
 
 # How to test
 
