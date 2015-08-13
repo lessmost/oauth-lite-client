@@ -2,6 +2,7 @@
   "name": "oauth-lite-client",
   "version": "1.0.0",
   "description": "A lite OAuth client in Node.JS",
+  "repository": "zqlu/oauth-lite-client",
   "main": "./lib/index.js",
   "directories": {
     "test": "test"
