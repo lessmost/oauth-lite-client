@@ -53,7 +53,10 @@ Already tested service providers list:
 
     ```js
     // after get the oauth_token or code from step 2, we can call token function
-    client.token(function (err, res, body) {
+    client.token({
+                    code: 'code from step 2', // for OAuth 2
+                    oauth_token: 'oauth_token from step 2' // for OAuth 1
+                },function (err, res, body) {
         // for OAuth 1, body contains oauth_token and oauth_token_secret
         var token = body.oauth_token;
         var tokenSecret = body.oauth_token_secret;
