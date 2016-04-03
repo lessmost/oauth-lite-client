@@ -26,16 +26,20 @@ function test(name, json) {
         context("User not authorized", function() {
             it('Should get error when token', function(done) {
                 client.token(function(err, res, body) {
-                    should.not.exist(err);
-                    should.notEqual(res.statusCode, 200);
+                    if (!err) {
+                        should.not.exist(err);
+                        should.notEqual(res.statusCode, 200);
+                    }
                     done();
                 });
             });
 
             it('Shoud get error when accountInfo', function(done) {
                 client.accountInfo(function(err, res) {
-                    should.not.exist(err);
-                    should.notEqual(res.statusCode, 200);
+                    if (!err) {
+                        should.not.exist(err);
+                        should.notEqual(res.statusCode, 200);
+                    }
                     done();
                 });
             });

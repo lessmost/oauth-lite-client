@@ -1,0 +1,17 @@
+{
+    "client_id": "abbd87f1ef57dc12b559",
+    "client_secret": "***",
+    "redirect_uri": "http://oauth-lite-client.github.com/callback",
+    "token_url": "https://github.com/login/oauth/access_token",
+    "authorize_url": "https://github.com/login/oauth/authorize",
+    "scope": "user,gist",
+    "account_info_url": "https://api.github.com/user",
+    "useragent": "oauth-lite-client",
+    "request": [{
+        "url": "https://api.github.com/user/emails",
+        "method": "GET",
+        "headers": {
+            "User-Agent": "oauth-lite-client"
+        }
+    }]
+}

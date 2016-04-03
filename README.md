@@ -9,7 +9,7 @@ flexible and easy to use.
 Already tested service providers list:
 
 - OAuth version 1: Dropbox, Twitter, Kuaipan
-- OAuth version 2: Google, Dropbox
+- OAuth version 2: Google, Dropbox, Github
 
 # How to use
 
